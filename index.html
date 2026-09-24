@@ -18,6 +18,20 @@ body{margin:0;background:#F6F3EE;font-family:Archivo,Helvetica,Arial,sans-serif;
 a{color:var(--fv-accent);text-decoration:none}
 a:hover{color:#B8410A}
 details summary::-webkit-details-marker{display:none}
+[data-mobmenu]{display:none}
+@media (max-width:760px){
+[data-navlink]{display:none!important}
+[data-mobmenu]{display:block!important}
+[data-meta]{flex-wrap:wrap!important;gap:6px 16px!important}
+[data-course]{grid-template-columns:auto minmax(0,1fr)!important;gap:16px 18px!important;align-items:start!important}
+[data-course]>:last-child{grid-column:1/-1}
+[data-steps]{grid-template-columns:1fr!important;gap:34px!important;border-left:2px solid rgba(25,23,20,.14);padding-left:26px;margin-left:8px}
+[data-steps]>div>span:first-child{left:-35px!important;top:2px!important}
+[data-steps]>div{padding-top:0!important}
+[data-line],[data-line-bg],[data-deco]{display:none!important}
+[data-resp]{grid-template-columns:1fr!important}
+[data-hero-cols]{margin-top:36px!important;gap:40px!important}
+}
 details[open] span[data-chev]{transform:rotate(45deg)}
 div[data-ans]{display:grid;grid-template-rows:0fr}
 details[open] div[data-ans]{grid-template-rows:1fr !important}
@@ -39,10 +53,19 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </span>
 </a>
 <nav style="display:flex;align-items:center;gap:clamp(0px,.5vw,10px);flex:1 1 auto;min-width:0;justify-content:flex-end;overflow:hidden">
-<a href="#cursos" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Cursos</a>
-<a href="#formacion" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Formación</a>
-<a href="#recorrido" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Cómo funciona</a>
-<a href="#faq" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Preguntas frecuentes</a>
+<a data-navlink href="#cursos" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Cursos</a>
+<a data-navlink href="#formacion" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Formación</a>
+<a data-navlink href="#recorrido" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Cómo funciona</a>
+<a data-navlink href="#faq" style="display:flex;align-items:center;padding:8px clamp(5px,.85vw,16px);min-width:0;flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#191714;font-size:clamp(12.5px,1.02vw,13.5px);font-weight:600;letter-spacing:-.005em;border-bottom:2px solid transparent" style-hover="border-bottom-color:var(--fv-accent,#E0510B)">Preguntas frecuentes</a>
+<details data-mobmenu>
+<summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 6px;font-size:14px;font-weight:600;color:#191714">Menú <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--fv-accent,#E0510B)">≡</span></summary>
+<div style="position:absolute;left:0;right:0;top:100%;background:#F6F3EE;border-bottom:1px solid rgba(25,23,20,.16);padding:4px 20px 18px;display:grid;box-shadow:0 20px 40px rgba(25,23,20,.12)">
+<a href="#cursos" style="display:block;padding:16px 0;border-top:1px solid rgba(25,23,20,.14);font-size:20px;font-weight:700;letter-spacing:-.02em;color:#191714">Cursos</a>
+<a href="#formacion" style="display:block;padding:16px 0;border-top:1px solid rgba(25,23,20,.14);font-size:20px;font-weight:700;letter-spacing:-.02em;color:#191714">Formación</a>
+<a href="#recorrido" style="display:block;padding:16px 0;border-top:1px solid rgba(25,23,20,.14);font-size:20px;font-weight:700;letter-spacing:-.02em;color:#191714">Cómo funciona</a>
+<a href="#faq" style="display:block;padding:16px 0;border-top:1px solid rgba(25,23,20,.14);font-size:20px;font-weight:700;letter-spacing:-.02em;color:#191714">Preguntas frecuentes</a>
+</div>
+</details>
 <a href="#ingresar" style="display:flex;align-items:center;gap:14px;margin-left:clamp(8px,1.2vw,22px);padding:13px clamp(14px,1.5vw,24px);flex:0 0 auto;background:#191714;color:#F6F3EE;font-size:14px;font-weight:600;letter-spacing:.01em;white-space:nowrap" style-hover="background:var(--fv-accent,#E0510B)">Ingresar <span style="font-family:'IBM Plex Mono',monospace;font-size:13px">→</span></a>
 </nav>
 </div>
@@ -71,7 +94,7 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </svg>
 
 <div style="position:relative;max-width:1500px;margin:0 auto;padding:0 clamp(20px,4vw,60px)">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(25,23,20,.55);border-bottom:1px solid rgba(25,23,20,.18);padding-bottom:14px">
+<div data-meta style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(25,23,20,.55);border-bottom:1px solid rgba(25,23,20,.18);padding-bottom:14px">
 <span style="white-space:nowrap">Formación profesional de conductores</span>
 <span style="white-space:nowrap">Buenos Aires · AR</span>
 </div>
@@ -84,7 +107,7 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </h1>
 <p data-lead style="position:relative;z-index:2;margin:clamp(26px,3vw,44px) 0 0;max-width:52ch;font-size:clamp(15px,1.15vw,17.5px);line-height:1.6;color:rgba(25,23,20,.7)">Capacitación para obtener o renovar tu licencia profesional de transporte público. Formación clara, práctica y orientada a una conducción segura.</p>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,4vw,70px);align-items:end;margin:clamp(44px,6vw,96px) 0 0;padding-bottom:clamp(50px,6vw,90px)">
+<div data-hero-cols style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,4vw,70px);align-items:end;margin:clamp(44px,6vw,96px) 0 0;padding-bottom:clamp(50px,6vw,90px)">
 <div style="position:relative;z-index:2;max-width:560px">
 
 <div data-ctas style="display:flex;flex-wrap:wrap;gap:16px">
@@ -121,7 +144,7 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </div>
 <h2 style="margin:clamp(34px,4vw,60px) 0 clamp(40px,5vw,72px);font-size:clamp(34px,4.6vw,68px);line-height:1;font-weight:700;letter-spacing:-.03em;max-width:16ch">Elegí la capacitación que te corresponde.</h2>
 
-<a href="#ingresar" data-reveal style="display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(28px,3.4vw,52px) 0;border-top:1px solid rgba(25,23,20,.16);color:#191714" style-hover="background:#1B1A18;color:#F6F3EE;padding-left:28px;padding-right:28px">
+<a href="#ingresar" data-course data-reveal style="display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(28px,3.4vw,52px) 0;border-top:1px solid rgba(25,23,20,.16);color:#191714" style-hover="background:#1B1A18;color:#F6F3EE;padding-left:28px;padding-right:28px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:clamp(32px,4.4vw,64px);line-height:1;color:var(--fv-accent,#E0510B)">01</span>
 <span style="display:block">
 <span style="display:block;font-size:clamp(28px,3.6vw,52px);font-weight:700;letter-spacing:-.025em;line-height:1.05">Inicial</span>
@@ -130,7 +153,7 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 <span style="display:flex;align-items:center;gap:14px;font-size:14px;font-weight:600;white-space:nowrap">Ingresar <span style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:var(--fv-accent,#E0510B);color:#fff;font-family:'IBM Plex Mono',monospace">→</span></span>
 </a>
 
-<a href="#ingresar" data-reveal style="display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(28px,3.4vw,52px) 0;border-top:1px solid rgba(25,23,20,.16);border-bottom:1px solid rgba(25,23,20,.16);color:#191714" style-hover="background:#1B1A18;color:#F6F3EE;padding-left:28px;padding-right:28px">
+<a href="#ingresar" data-course data-reveal style="display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) minmax(0,auto);gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(28px,3.4vw,52px) 0;border-top:1px solid rgba(25,23,20,.16);border-bottom:1px solid rgba(25,23,20,.16);color:#191714" style-hover="background:#1B1A18;color:#F6F3EE;padding-left:28px;padding-right:28px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:clamp(32px,4.4vw,64px);line-height:1;color:var(--fv-accent,#E0510B)">02</span>
 <span style="display:block">
 <span style="display:block;font-size:clamp(28px,3.6vw,52px);font-weight:700;letter-spacing:-.025em;line-height:1.05">Renovación</span>
@@ -188,9 +211,9 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </div>
 <h2 style="margin:0 0 clamp(56px,6vw,96px);font-size:clamp(32px,4.2vw,62px);line-height:1;font-weight:700;letter-spacing:-.03em;max-width:18ch">Un recorrido simple, de principio a fin.</h2>
 
-<div style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.5vw,40px)">
+<div data-steps style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.5vw,40px)">
 <div data-line style="position:absolute;left:0;top:13px;height:2px;width:0;background:var(--fv-accent,#E0510B)"></div>
-<div style="position:absolute;left:0;right:0;top:13px;height:2px;background:rgba(25,23,20,.14)"></div>
+<div data-line-bg style="position:absolute;left:0;right:0;top:13px;height:2px;background:rgba(25,23,20,.14)"></div>
 <div data-reveal style="position:relative;padding-top:46px">
 <span style="position:absolute;top:6px;left:0;width:16px;height:16px;border-radius:50%;background:var(--fv-accent,#E0510B);box-shadow:0 0 0 5px #F6F3EE"></span>
 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:var(--fv-accent,#E0510B)">01</span>
@@ -220,8 +243,8 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 </section>
 
 <section id="responsabilidad" style="position:relative;background:#1B1A18;color:#F6F3EE;overflow:hidden;padding:clamp(100px,11vw,180px) clamp(20px,4vw,60px) clamp(90px,10vw,160px)">
-<div style="position:absolute;top:0;bottom:0;right:0;width:min(34%,440px);background:#211F1B;pointer-events:none"></div>
-<svg viewBox="0 0 600 600" preserveAspectRatio="none" style="position:absolute;right:0;top:0;width:min(34%,440px);height:100%;opacity:.7;pointer-events:none">
+<div data-deco style="position:absolute;top:0;bottom:0;right:0;width:min(34%,440px);background:#211F1B;pointer-events:none"></div>
+<svg data-deco viewBox="0 0 600 600" preserveAspectRatio="none" style="position:absolute;right:0;top:0;width:min(34%,440px);height:100%;opacity:.7;pointer-events:none">
 <g stroke="rgba(246,243,238,.1)" stroke-width="1" fill="none"><path d="M0 90H600M0 240H600M0 390H600M0 540H600"></path><path d="M140 0V600M320 0V600M470 0V600"></path></g>
 <path d="M-20 540L320 540L470 390L620 390" fill="none" stroke="rgba(246,243,238,.18)" stroke-width="2"></path>
 </svg>
@@ -230,7 +253,7 @@ details[open] div[data-ans]>div{animation:fv-fade .3s ease both}
 <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;color:var(--fv-accent,#E0510B)">04</span>
 <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,243,238,.62)">Seguridad vial y responsabilidad profesional</span>
 </div>
-<div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,90px);align-items:start;margin-top:clamp(44px,5.5vw,86px)">
+<div data-resp style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,90px);align-items:start;margin-top:clamp(44px,5.5vw,86px)">
 <div>
 <h2 style="margin:0;font-size:clamp(32px,5.2vw,78px);line-height:1;font-weight:800;letter-spacing:-.035em;max-width:15ch">Mover personas también es <span style="color:var(--fv-accent,#E0510B)">cuidar personas.</span></h2>
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:clamp(34px,4vw,58px);max-width:660px">
@@ -429,6 +452,8 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyAccent();
     this.layoutRoute();
+    this._onMenu = e => { const a = e.target.closest && e.target.closest('[data-mobmenu] a'); if (a) a.closest('details').open = false; };
+    document.addEventListener('click', this._onMenu);
     this._onRoute = () => this.layoutRoute();
     window.addEventListener('resize', this._onRoute);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._onRoute);
@@ -495,6 +520,7 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
     if (this._onRoute) window.removeEventListener('resize', this._onRoute);
+    if (this._onMenu) document.removeEventListener('click', this._onMenu);
     if (this._poll) clearInterval(this._poll);
     if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
   }
